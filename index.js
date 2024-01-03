@@ -3,7 +3,7 @@ function geoJSON(geo, meta) {
         pointToLayer: function (feature, latlng) {
             let marker = L.circleMarker(latlng, {radius: 3, fillColor: "#FFFFFF", color: "#000000", weight: 1, opacity: 1, fillOpacity: 1});
             marker.bindPopup(function () {
-                return `s`;
+                return `<div class="popup"><div class="flag"><img src="${meta.flag}" alt="FLAG"></div><div class="info"><h3 class="name"><strong>Город</strong> ${feature.properties.name}</h3></div></div>`;
             });
             citiesMarkers.addLayer(marker);
         },
