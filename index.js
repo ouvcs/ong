@@ -1,19 +1,31 @@
 function geoJSON(geo, meta) {
     L.geoJSON(geo, {
         pointToLayer: function (feature, latlng) {
-            let marker = L.circleMarker(latlng, {radius: 3, fillColor: "#FFFFFF", color: "#000000", weight: 1, opacity: 1, fillOpacity: 1});
-            marker.bindPopup(function () {
-                return `s`;
-            });
-            citiesMarkers.addLayer(marker);
+            try {
+                let marker = L.circleMarker(latlng, {radius: 3, fillColor: "#FFFFFF", color: "#000000", weight: 1, opacity: 1, fillOpacity: 1});
+                marker.bindPopup(function () {
+                    return `s`;
+                });
+                citiesMarkers.addLayer(marker);
+            } catch {
+                console.log("Failed");
+            }
         },
         onEachFeature: function (feature, layer) {
-            layer.bindPopup(function (layer) {
-                return `<div class="popup"><div class="flag"><img src="${meta.flag}" alt="FLAG"></div><div class="info"><h3 class="name">${meta.name}</h3><a href="${meta.link}" class="vk">Правитель</a></div></div>`;
-            });
+            try {
+                layer.bindPopup(function (layer) {
+                    return `<div class="popup"><div class="flag"><img src="${meta.flag}" alt="FLAG"></div><div class="info"><h3 class="name">${meta.name}</h3><a href="${meta.link}" class="vk">Правитель</a></div></div>`;
+                });
+            } catch {
+                console.log("Failed");
+            }
         },
         style: function (feature) {
-            return {color: feature.properties.stroke, fill: feature.properties.fill};
+            try {
+                return {color: feature.properties.stroke, fill: feature.properties.fill};
+            } catch {
+                console.log("Failed");
+            }
         }
     }).addTo(map);
 }
@@ -37,11 +49,15 @@ map.on("zoomend", function() {
 });
 
 countries.forEach((element) => {
-    fetch("./geos/"+element+".geojson").then((data) => data.json()).then((geo) => {
-        fetch("./geos/"+element+".geojson.meta").then((data) => data.json()).then((meta) => {
-            geoJSON(geo, meta);
+    try{
+        fetch("./geos/"+element+".geojson").then((data) => data.json()).then((geo) => {
+            fetch("./geos/"+element+".geojson.meta").then((data) => data.json()).then((meta) => {
+                geoJSON(geo, meta);
+            });
         });
-    });
+    } catch {
+        console.log("Failed");
+    }
 });
 
 
