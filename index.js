@@ -11,8 +11,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 function geoJSON(geo) {
     L.geoJSON(geo, {
         pointToLayer: function (feature, latlng) {
-            citiesMarkers.addLayer(feature);
-            return L.circleMarker(latlng, {radius: 3, fillColor: "#FFFFFF", color: "#000000", weight: 1, opacity: 1, fillOpacity: 1});
+            citiesMarkers.addLayer(L.circleMarker(latlng, {radius: 3, fillColor: "#FFFFFF", color: "#000000", weight: 1, opacity: 1, fillOpacity: 1}));
         }
     }).addTo(map);
 }
