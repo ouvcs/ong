@@ -40,7 +40,7 @@ map.on("zoomend", function() {
 
 countries.forEach(async function (element) {
     await fetch("./geos/"+element+".geojson").then((data) => data.json()).then((geo) => {
-        await fetch("./geos/"+element+".geojson.meta").then((data) => data.json()).then((meta) => {
+        fetch("./geos/"+element+".geojson.meta").then((data) => data.json()).then((meta) => {
             geoJSON(geo, meta);
         });
     });
