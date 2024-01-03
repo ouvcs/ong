@@ -1,5 +1,5 @@
 var map = L.map("map").setView([0.0, 0.0], 1);
-var citiesMarkers = new L.FeatureGroup();
+var citiesMarkers = new L.markerClusterGroup();
 
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 10,
