@@ -1,7 +1,7 @@
 function geoJSON(geo, meta) {
     L.geoJSON(geo, {
         pointToLayer: function (feature, latlng) {
-            let marker = L.circleMarker(latlng, {radius: 3, fillColor: "#FFFFFF", color: "#000000", weight: 1, opacity: 1, fillOpacity: 1});
+            let marker = L.circleMarker(latlng, {radius: 5, fillColor: "#FFFFFF", color: "#000000", weight: 1, opacity: 1, fillOpacity: 1});
             marker.bindPopup(function () {
                 let type = feature.properties.type;
                 if (type == "capital") {type = "Столица"} else {type = "Город"};
