@@ -246,7 +246,13 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#555555",
+        "fill-opacity": 0.5
+      },
       "geometry": {
         "coordinates": [
           [
@@ -517,13 +523,19 @@
           ]
         ],
         "type": "Polygon"
-      }
+      },
+      "id": 16
     },
     {
       "type": "Feature",
       "properties": {
         "capital": "",
-        "city": ""
+        "city": "",
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#555555",
+        "fill-opacity": 0.5
       },
       "geometry": {
         "coordinates": [
@@ -1144,7 +1156,13 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#555555",
+        "fill-opacity": 0.5
+      },
       "geometry": {
         "coordinates": [
           [
@@ -2115,7 +2133,8 @@
           ]
         ],
         "type": "Polygon"
-      }
+      },
+      "id": 18
     }
   ]
 }
