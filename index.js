@@ -37,15 +37,11 @@ map.on("zoomend", function() {
 });
 
 countries.forEach((element) => {
-    try{
-        fetch("./geos/"+element+".geojson").then((data) => data.json()).then((geo) => {
-            fetch("./geos/"+element+".geojson.meta").then((data) => data.json()).then((meta) => {
-                geoJSON(geo, meta);
-            });
+    fetch("./geos/"+element+".geojson").then((data) => data.json()).then((geo) => {
+        fetch("./geos/"+element+".geojson.meta").then((data) => data.json()).then((meta) => {
+            geoJSON(geo, meta);
         });
-    } catch {
-        console.error("Failed");
-    }
+    });
 });
 
 
