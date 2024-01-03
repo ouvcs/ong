@@ -4,7 +4,8 @@
     {
       "type": "Feature",
       "properties": {
-        "city": "Паньковск"
+        "name": "Паньковск",
+        "type": "city"
       },
       "geometry": {
         "coordinates": [
@@ -12,12 +13,14 @@
           60.6048739964601
         ],
         "type": "Point"
-      }
+      },
+      "id": 0
     },
     {
       "type": "Feature",
       "properties": {
-        "capital": "Оранжевоград"
+        "name": "Оранжевоград",
+        "type": "capital"
       },
       "geometry": {
         "coordinates": [
@@ -25,12 +28,14 @@
           64.89834904361223
         ],
         "type": "Point"
-      }
+      },
+      "id": 1
     },
     {
       "type": "Feature",
       "properties": {
-        "city": "Олего-Евразийск"
+        "type": "city",
+        "name": "Олего-Евразийск"
       },
       "geometry": {
         "coordinates": [
@@ -38,12 +43,14 @@
           59.312964351914104
         ],
         "type": "Point"
-      }
+      },
+      "id": 2
     },
     {
       "type": "Feature",
       "properties": {
-        "city": "Чукотск"
+        "name": "Чукотск",
+        "type": "city"
       },
       "geometry": {
         "coordinates": [
@@ -51,12 +58,14 @@
           67.3912335891801
         ],
         "type": "Point"
-      }
+      },
+      "id": 3
     },
     {
       "type": "Feature",
       "properties": {
-        "city": "Резьбург"
+        "name": "Резьбург",
+        "type": "city"
       },
       "geometry": {
         "coordinates": [
@@ -64,12 +73,17 @@
           69.16512425734695
         ],
         "type": "Point"
-      }
+      },
+      "id": 4
     },
     {
       "type": "Feature",
       "properties": {
-        "city": "Аляска"
+        "name": "Аляска",
+        "type": "city",
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "circle"
       },
       "geometry": {
         "coordinates": [
@@ -77,12 +91,14 @@
           70.05311039877336
         ],
         "type": "Point"
-      }
+      },
+      "id": 5
     },
     {
       "type": "Feature",
       "properties": {
-        "city": "Канадск"
+        "name": "Канадск",
+        "type": "city"
       },
       "geometry": {
         "coordinates": [
@@ -90,12 +106,14 @@
           67.13581991409333
         ],
         "type": "Point"
-      }
+      },
+      "id": 6
     },
     {
       "type": "Feature",
       "properties": {
-        "city": "Ново-Канадск"
+        "name": "Ново-Канадск",
+        "type": "city"
       },
       "geometry": {
         "coordinates": [
@@ -103,12 +121,14 @@
           64.76525389677039
         ],
         "type": "Point"
-      }
+      },
+      "id": 7
     },
     {
       "type": "Feature",
       "properties": {
-        "city": "Фаристан"
+        "name": "Фаристан",
+        "type": "city"
       },
       "geometry": {
         "coordinates": [
@@ -116,12 +136,14 @@
           57.14420419185353
         ],
         "type": "Point"
-      }
+      },
+      "id": 8
     },
     {
       "type": "Feature",
       "properties": {
-        "city": "Карасевск"
+        "name": "Карасевск",
+        "type": "city"
       },
       "geometry": {
         "coordinates": [
@@ -129,12 +151,14 @@
           50.76516615402002
         ],
         "type": "Point"
-      }
+      },
+      "id": 9
     },
     {
       "type": "Feature",
       "properties": {
-        "city": "Малька"
+        "name": "Малька",
+        "type": "city"
       },
       "geometry": {
         "coordinates": [
@@ -142,12 +166,14 @@
           48.08144130842999
         ],
         "type": "Point"
-      }
+      },
+      "id": 10
     },
     {
       "type": "Feature",
       "properties": {
-        "city": "Антаевск"
+        "type": "city",
+        "name": "Антаевск"
       },
       "geometry": {
         "coordinates": [
@@ -155,12 +181,14 @@
           48.265973272954085
         ],
         "type": "Point"
-      }
+      },
+      "id": 11
     },
     {
       "type": "Feature",
       "properties": {
-        "city": "Анкайск"
+        "name": "Анкайск",
+        "type": "city"
       },
       "geometry": {
         "coordinates": [
@@ -168,12 +196,14 @@
           59.26905691509384
         ],
         "type": "Point"
-      }
+      },
+      "id": 12
     },
     {
       "type": "Feature",
       "properties": {
-        "city": "Каменск-Аляскинский"
+        "name": "Каменск-Аляскинский",
+        "type": "city"
       },
       "geometry": {
         "coordinates": [
@@ -181,12 +211,14 @@
           61.555244659352184
         ],
         "type": "Point"
-      }
+      },
+      "id": 13
     },
     {
       "type": "Feature",
       "properties": {
-        "city": "Тимурск"
+        "name": "Тимурск",
+        "type": "city"
       },
       "geometry": {
         "coordinates": [
@@ -194,12 +226,14 @@
           63.15003610242732
         ],
         "type": "Point"
-      }
+      },
+      "id": 14
     },
     {
       "type": "Feature",
       "properties": {
-        "city": "Жиремо"
+        "name": "Жиремо",
+        "type": "city"
       },
       "geometry": {
         "coordinates": [
@@ -207,7 +241,8 @@
           65.3841154194906
         ],
         "type": "Point"
-      }
+      },
+      "id": 15
     },
     {
       "type": "Feature",
@@ -1104,18 +1139,8 @@
           ]
         ],
         "type": "Polygon"
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "coordinates": [
-          -146.39668810830437,
-          66.49163943487537
-        ],
-        "type": "Point"
-      }
+      },
+      "id": 17
     },
     {
       "type": "Feature",
