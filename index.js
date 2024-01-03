@@ -17,7 +17,7 @@ function geoJSON(geo) {
 }
 
 map.on("zoomend", function() {
-    if (map.getZoom() >= 3){
+    if (map.getZoom() <= 4){
         map.removeLayer(citiesMarkers);
     } else {
         map.addLayer(citiesMarkers);
