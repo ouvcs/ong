@@ -1,31 +1,19 @@
 function geoJSON(geo, meta) {
     L.geoJSON(geo, {
         pointToLayer: function (feature, latlng) {
-            try {
-                let marker = L.circleMarker(latlng, {radius: 3, fillColor: "#FFFFFF", color: "#000000", weight: 1, opacity: 1, fillOpacity: 1});
-                marker.bindPopup(function () {
-                    return `s`;
-                });
-                citiesMarkers.addLayer(marker);
-            } catch {
-                console.log("Failed");
-            }
+            let marker = L.circleMarker(latlng, {radius: 3, fillColor: "#FFFFFF", color: "#000000", weight: 1, opacity: 1, fillOpacity: 1});
+            marker.bindPopup(function () {
+                return `s`;
+            });
+            citiesMarkers.addLayer(marker);
         },
         onEachFeature: function (feature, layer) {
-            try {
-                layer.bindPopup(function (layer) {
-                    return `<div class="popup"><div class="flag"><img src="${meta.flag}" alt="FLAG"></div><div class="info"><h3 class="name">${meta.name}</h3><a href="${meta.link}" class="vk">Правитель</a></div></div>`;
-                });
-            } catch {
-                console.log("Failed");
-            }
+            layer.bindPopup(function (layer) {
+                return `<div class="popup"><div class="flag"><img src="${meta.flag}" alt="FLAG"></div><div class="info"><h3 class="name">${meta.name}</h3><a href="${meta.link}" class="vk">Правитель</a></div></div>`;
+            });
         },
         style: function (feature) {
-            try {
-                return {color: feature.properties.stroke, fill: feature.properties.fill};
-            } catch {
-                console.log("Failed");
-            }
+            return {color: feature.properties.stroke, fill: feature.properties.fill};
         }
     }).addTo(map);
 }
@@ -56,7 +44,7 @@ countries.forEach((element) => {
             });
         });
     } catch {
-        console.log("Failed");
+        console.error("Failed");
     }
 });
 
