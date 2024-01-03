@@ -36,7 +36,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 
 map.on("zoomend", function() {
-    if (map.getZoom() <= 3){
+    if (map.getZoom() <= 4){
         map.removeLayer(citiesMarkers);
     } else {
         map.addLayer(citiesMarkers);
