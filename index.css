@@ -13,16 +13,19 @@ body {
 .popup {
   display: flex;
   justify-content: center;
-}
-
-.flag {
-  width: 50%;
-  display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .info {
-  width: 50%;
+  width: 100%;
+}
+
+.flag {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .flag img {
