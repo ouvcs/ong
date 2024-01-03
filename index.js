@@ -39,9 +39,12 @@ map.on("zoomend", function() {
 });
 
 countries.forEach(async function (element) {
+    console.log("s0"+element);
     await fetch("./geos/"+element+".geojson").then((data) => data.json()).then((geo) => {
+        console.log("s1"+element);
         fetch("./geos/"+element+".geojson.meta").then((data) => data.json()).then((meta) => {
             geoJSON(geo, meta);
+            console.log("s2"+element);
         });
     });
 });
