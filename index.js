@@ -1,4 +1,5 @@
 function geoJSON(geo, meta) {
+    console.log("g0"+meta.name);
     L.geoJSON(geo, {
         pointToLayer: function (feature, latlng) {
             let marker = L.circleMarker(latlng, {radius: 5, fillColor: "#FFFFFF", color: "#000000", weight: 1, opacity: 1, fillOpacity: 1});
@@ -8,16 +9,20 @@ function geoJSON(geo, meta) {
                 return `<div class="popup"><div class="flag"><img src="${meta.flag}" alt="FLAG"></div><div class="info"><div class="name"><strong>${type}</strong> ${feature.properties.name}</h3></div></div>`;
             });
             citiesMarkers.addLayer(marker);
+            console.log("g1"+meta.name);
         },
         onEachFeature: function (feature, layer) {
             layer.bindPopup(function (layer) {
+                console.log("g2"+meta.name);
                 return `<div class="popup"><div class="flag"><img src="${meta.flag}" alt="FLAG"></div><div class="info"><h3 class="name">${meta.name}</h3><a href="${meta.link}" class="vk">Правитель</a></div></div>`;
             });
         },
         style: function (feature) {
+            console.log("g3"+meta.name);
             return {color: feature.properties.stroke, fill: feature.properties.fill};
         }
     }).addTo(map);
+    console.log("g4"+meta.name);
 }
 
 let map = L.map("map").setView([0.0, 0.0], 1);
