@@ -5,7 +5,7 @@ function geoJSON(geo, meta) {
             marker.bindPopup(function () {
                 let type = feature.properties.type;
                 if (type == "capital") {type = "Столица"} else {type = "Город"};
-                return `<div class="popup"><div class="flag"><img src="${meta.flag}" alt="FLAG"></div><div class="info"><h3 class="name"><strong>${type}</strong> ${feature.properties.name}</h3></div></div>`;
+                return `<div class="popup"><div class="flag"><img src="${meta.flag}" alt="FLAG"></div><div class="info"><div class="name"><strong>${type}</strong> ${feature.properties.name}</h3></div></div>`;
             });
             citiesMarkers.addLayer(marker);
         },
@@ -38,9 +38,9 @@ map.on("zoomend", function() {
     }
 });
 
-countries.forEach((element) => {
-    fetch("./geos/"+element+".geojson").then((data) => data.json()).then((geo) => {
-        fetch("./geos/"+element+".geojson.meta").then((data) => data.json()).then((meta) => {
+countries.forEach(async function (element) {
+    await fetch("./geos/"+element+".geojson").then((data) => data.json()).then((geo) => {
+        await fetch("./geos/"+element+".geojson.meta").then((data) => data.json()).then((meta) => {
             geoJSON(geo, meta);
         });
     });
