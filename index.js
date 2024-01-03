@@ -1,5 +1,5 @@
 var map = L.map("map").setView([0.0, 0.0], 1);
-var citiesMarkers = new L.markerClusterGroup();
+//var citiesMarkers = new L.featureGroup();
 
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 10,
@@ -17,7 +17,7 @@ function geoJSON(geo) {
     }).addTo(map);
 }
 
-map.on('zoomend', function() {
+map.on("zoomend", function() {
     if (map.getZoom() < 7){
         map.removeLayer(citiesMarkers);
     }
