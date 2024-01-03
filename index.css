@@ -9,3 +9,17 @@ body {
   width: 100%;
   height: 100%;
 }
+
+.popup {
+  width: 300px;
+}
+
+.flag {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+.flag img {
+  width: 100%;
+}
