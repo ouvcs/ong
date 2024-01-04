@@ -1,25 +1,32 @@
+var cityIcon = L.icon({
+    iconUrl: "https://github.com/ouvcs/ong-map/blob/main/assets/city.png?raw=true",
+    iconSize: [32, 32],
+    iconAnchor: [16, 16],
+    popupAnchor: [-3, -76]
+});
+
+var capitalIcon = L.icon({
+    iconUrl: "https://github.com/ouvcs/ong-map/blob/main/assets/capital.png?raw=true",
+    iconSize: [32, 32],
+    iconAnchor: [16, 16],
+    popupAnchor: [-3, -76]
+});
+
 function geoJSON(geo, meta) {
     L.geoJSON(geo, {
         pointToLayer: function (feature, latlng) {
-            let marker;
-            let type = feature.properties.type;
+            let marker; let type = feature.properties.type;
             
             if (type == "capital") {
-                marker = L.circleMarker(latlng, {radius: 5, fillColor: "#FFFFFF", color: "#000000", weight: 2, opacity: 1, fillOpacity: 1});
+                marker = L.marker(latlng, {icon: capitalIcon, riseOnHover: true, riseOffset: 250});
+                type = "Столица";
             } else {
-                marker = L.circleMarker(latlng, {radius: 4, fillColor: "#FFFFFF", color: "#000000", weight: 1, opacity: 1, fillOpacity: 1});
+                marker = L.marker(latlng, {icon: cityIcon, riseOnHover: true, riseOffset: 250});
+                type = "Город";
             }
-            
-            marker.bindPopup(function () {
-                if (type == "capital") {type = "Столица"} else {type = "Город"};
-                return `<div class="popup"><div class="info"><div class="name"><strong>${type}</strong> ${feature.properties.name}</h3></div></div>`;
-            });
 
-            marker.on("mouseover", function (e) {
-                this.openPopup();
-            });
-            marker.on("mouseout", function (e) {
-                this.closePopup();
+            marker.bindPopup(function () {
+                return `<div class="popup"><div class="info"><div class="name"><strong>${type}</strong> ${feature.properties.name}</h3></div></div>`;
             });
             
             citiesMarkers.addLayer(marker);
