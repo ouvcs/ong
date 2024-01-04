@@ -6,7 +6,7 @@ function geoJSON(geo, meta) {
             
             if (type == "capital") {
                 marker = L.circleMarker(latlng, {radius: 5, fillColor: "#FFFFFF", color: "#000000", weight: 2, opacity: 1, fillOpacity: 1});
-            else {
+            } else {
                 marker = L.circleMarker(latlng, {radius: 4, fillColor: "#FFFFFF", color: "#000000", weight: 1, opacity: 1, fillOpacity: 1});
             }
             
