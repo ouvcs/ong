@@ -19,7 +19,7 @@ function geoJSON(geo, meta) {
         },
         style: function (feature) {
             console.log("g3"+meta.name);
-            return {color: feature.properties.stroke, fill: feature.properties.fill};
+            return {color: meta.stroke, fill: meta.fill};
         }
     }).addTo(map);
     console.log("g4"+meta.name);
