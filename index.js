@@ -51,7 +51,7 @@ function geoJSON(geo, meta) {
 
 let map = L.map("map").setView([0.0, 0.0], 1);
 let citiesMarkers = new L.featureGroup();
-let countries = ["peoples-republic-agaria", "severnaya-federation"]
+let countries = ["peoples-republic-agaria", "severnaya-federation", "andreevskaya-federative-republic"]
 
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 7,
