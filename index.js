@@ -7,8 +7,8 @@ var cityIcon = L.icon({
 
 var capitalIcon = L.icon({
     iconUrl: "https://github.com/ouvcs/ong-map/blob/main/assets/capital.png?raw=true",
-    iconSize: [24, 24],
-    iconAnchor: [12, 12],
+    iconSize: [18, 18],
+    iconAnchor: [9, 9],
     popupAnchor: [0, 0]
 });
 
