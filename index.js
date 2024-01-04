@@ -7,8 +7,8 @@ var cityIcon = L.icon({
 
 var capitalIcon = L.icon({
     iconUrl: "https://github.com/ouvcs/ong-map/blob/main/assets/capital.png?raw=true",
-    iconSize: [16, 16],
-    iconAnchor: [8, 8],
+    iconSize: [24, 24],
+    iconAnchor: [12, 12],
     popupAnchor: [0, 0]
 });
 
@@ -18,15 +18,22 @@ function geoJSON(geo, meta) {
             let marker; let type = feature.properties.type;
             
             if (type == "capital") {
-                marker = L.marker(latlng, {icon: capitalIcon, riseOnHover: true, riseOffset: 250});
+                marker = L.marker(latlng, {icon: capitalIcon});
                 type = "Столица";
             } else {
-                marker = L.marker(latlng, {icon: cityIcon, riseOnHover: true, riseOffset: 250});
+                marker = L.marker(latlng, {icon: cityIcon});
                 type = "Город";
             }
 
             marker.bindPopup(function () {
                 return `<div class="popup"><div class="info"><div class="name"><strong>${type}</strong> ${feature.properties.name}</h3></div></div>`;
+            });
+
+            marker.on("mouseover", function (e) {
+                this.openPopup();
+            });
+            marker.on("mouseout", function (e) {
+                this.closePopup();
             });
             
             citiesMarkers.addLayer(marker);
