@@ -12,7 +12,14 @@ function geoJSON(geo, meta) {
             
             marker.bindPopup(function () {
                 if (type == "capital") {type = "Столица"} else {type = "Город"};
-                return `<div class="popup"><div class="flag"><img src="${meta.flag}" alt="FLAG"></div><div class="info"><div class="name"><strong>${type}</strong> ${feature.properties.name}</h3></div></div>`;
+                return `<div class="popup"><div class="info"><div class="name"><strong>${type}</strong> ${feature.properties.name}</h3></div></div>`;
+            });
+
+            marker.on("mouseover", function (e) {
+                this.openPopup();
+            });
+            marker.on("mouseout", function (e) {
+                this.closePopup();
             });
             
             citiesMarkers.addLayer(marker);
