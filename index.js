@@ -1,15 +1,15 @@
 var cityIcon = L.icon({
     iconUrl: "https://github.com/ouvcs/ong-map/blob/main/assets/city.png?raw=true",
-    iconSize: [32, 32],
-    iconAnchor: [16, 16],
-    popupAnchor: [-3, -76]
+    iconSize: [16, 16],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, 0]
 });
 
 var capitalIcon = L.icon({
     iconUrl: "https://github.com/ouvcs/ong-map/blob/main/assets/capital.png?raw=true",
-    iconSize: [32, 32],
-    iconAnchor: [16, 16],
-    popupAnchor: [-3, -76]
+    iconSize: [16, 16],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, 0]
 });
 
 function geoJSON(geo, meta) {
