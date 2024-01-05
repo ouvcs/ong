@@ -54,7 +54,7 @@ let citiesMarkers = new L.featureGroup();
 let countries = ["peoples-republic-agaria", "severnaya-federation", "andreevskaya-federative-republic"]
 
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 7,
+    maxZoom: 6,
     attribution: `&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>`
 }).addTo(map);
 
