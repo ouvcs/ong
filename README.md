@@ -1,5 +1,5 @@
 # One Page Sites
-## Map
+## [Map](https://ouvcs.github.io/ong/map/)
 ### Currently added:
 1. People's Republic Agaria
 2. Severnaya Federation
