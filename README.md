@@ -1,5 +1,5 @@
-# Map || One Page Sites
-
+# One Page Sites
+## Map
 ### Currently added:
 1. People's Republic Agaria
 2. Severnaya Federation
